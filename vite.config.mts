@@ -5,6 +5,8 @@ export default defineConfig(({ command }) => ({
   base: command === 'build' ? '/react-native-pay-demo/' : '/',
   plugins: [react()],
   define: {
+    __DEV__: JSON.stringify(command !== 'build'),
+    global: 'globalThis',
     'process.env.NODE_ENV': JSON.stringify(
       command === 'build' ? 'production' : 'development',
     ),
