@@ -1,6 +1,8 @@
 # CryptoPay React Native
 
-企业数字资产支付移动客户端演示工程，基于 React Native 0.87、React 19.2 和 TypeScript 6，覆盖 iOS 与 Android。它完整复刻 Flutter 版本的产品功能，并使用 React Native 新架构、Hermes V1 和 Strict TypeScript API。
+企业数字资产支付客户端演示工程，基于 React Native 0.87、React 19.2 和 TypeScript 6，覆盖 iOS、Android 与 Web。它完整复刻 Flutter 版本的产品功能，并使用 React Native 新架构、Hermes V1 和 Strict TypeScript API。
+
+在线 Web 演示：<https://dj49846917.github.io/react-native-pay-demo/>
 
 > 当前为 Mock 演示。真实身份认证、短信、验证码、KYC/KYB、KYT/AML、报价、账本、托管签名、审批执行和链上广播必须由合规后端负责。不要在客户端保存生产私钥。
 
@@ -9,6 +11,7 @@
 | 分类 | 技术 | 用途 |
 |---|---|---|
 | 框架 | React Native 0.87、React 19.2、TypeScript 6 | iOS/Android 共享业务代码 |
+| Web | React Native Web 0.21、Vite 8 | 浏览器适配与 GitHub Pages 静态部署 |
 | 运行时 | Hermes V1、React Native New Architecture | JavaScript 执行、Fabric 与 TurboModules |
 | 导航 | React Navigation 7 | 原生栈、底部标签和详情路由 |
 | 状态 | Zustand 5 + AsyncStorage 3 | 应用状态和本地演示数据持久化 |
@@ -67,6 +70,17 @@ Android：
 emulator -avd Medium_Phone_API_36.1
 npm run android
 ```
+
+Web：
+
+```bash
+npm run web
+# 生产构建与预览
+npm run build:web
+npm run web:preview
+```
+
+推送到 `main` 后，`.github/workflows/deploy-pages.yml` 会自动检查、构建并发布到 GitHub Pages。
 
 Metro 可单独启动：
 

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "build:web": "vite build",
+    "check": "npm run lint && npm run typecheck && npm test -- --runInBand",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
@@ -11,7 +13,9 @@
     "typecheck": "tsc --noEmit",
     "storybook": "STORYBOOK_ENABLED=true react-native start --reset-cache",
     "storybook:ios": "STORYBOOK_ENABLED=true react-native run-ios",
-    "storybook:android": "STORYBOOK_ENABLED=true react-native run-android"
+    "storybook:android": "STORYBOOK_ENABLED=true react-native run-android",
+    "web": "vite",
+    "web:preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -21,6 +25,7 @@
     "@react-navigation/native-stack": "^7.18.8",
     "lucide-react-native": "^1.31.0",
     "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-hook-form": "^7.85.0",
     "react-native": "0.87.0",
     "react-native-gesture-handler": "^3.1.0",
@@ -28,6 +33,7 @@
     "react-native-safe-area-context": "5.8.0",
     "react-native-screens": "^4.27.0",
     "react-native-svg": "^15.15.5",
+    "react-native-web": "0.21.2",
     "react-native-worklets": "^0.12.0",
     "zod": "^4.4.3",
     "zustand": "^5.0.14"
@@ -54,12 +60,14 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.2.0",
     "@types/react-test-renderer": "^19.1.0",
+    "@vitejs/plugin-react": "6.0.5",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "19.2.3",
     "storybook": "^10.5.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vite": "8.2.1"
   },
   "engines": {
     "node": ">= 22.11.0"
